@@ -1,0 +1,17 @@
+{
+  "name": "lv-training-es6",
+  "version": "1.0.0",
+  "description": "LinkValue Training exercice",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Lucas Courot",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "jest": "^22.4.0"
+  }
+}
