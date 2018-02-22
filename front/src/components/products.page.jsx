@@ -1,4 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {bindActionCreators} from "redux";
+import {addItemToCart, removeItemFromCart} from "../actions/cart.actions";
+
 
 const ProductsPage = ({ productList, onAddProduct, onRemoveProduct }) => (
     <div>
@@ -15,4 +19,12 @@ const ProductsPage = ({ productList, onAddProduct, onRemoveProduct }) => (
     </div>
 );
 
-export default ProductsPage;
+const mapStateToProps = state => ({
+    productList: state.products,
+});
+const mapDispatchToProps = dispatch => bindActionCreators({
+    onAddProduct: addItemToCart,
+    onRemoveProduct: removeItemFromCart
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsPage);
