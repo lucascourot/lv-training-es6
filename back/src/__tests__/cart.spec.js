@@ -1,4 +1,4 @@
-const {addProductToCart, getTotal} = require('./cart');
+const {addProductToCart, getTotal} = require('../cart');
 
 test('it adds a single product', () => {
     //  Given
