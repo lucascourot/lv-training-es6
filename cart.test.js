@@ -1,5 +1,17 @@
-const cart = require('./cart');
+const {addProductToCart, getTotal} = require('./cart');
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(cart(1, 2)).toBe(3);
+test('it adds a single product', () => {
+    //  Given
+    const cart = [];
+    const productToAdd = {
+        name: "iPhone",
+        price: 100000
+    };
+
+    // When
+    const newCart = addProductToCart(productToAdd, cart);
+
+    // Then
+    const total = getTotal(newCart);
+    expect(total).toBe(100000);
 });
